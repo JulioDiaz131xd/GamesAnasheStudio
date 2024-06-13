@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBTIS Smash Bros</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .header img {
+            height: 40px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #111;
+            width: 100%;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .hero img {
+            max-width: 50%;
+            border-radius: 8px;
+        }
+        .content {
+            max-width: 45%;
+        }
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .content h2 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+        .price-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .price-box p {
+            margin: 10px 0;
+        }
+        .price-box .price {
+            font-size: 2em;
+        }
+        .price-box .old-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            background-color: #1346df;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #b9181d;
+        }
+        .trial-option {
+            cursor: pointer;
+            color: #fff;
+            text-decoration: underline;
+        }
+        .trial-option:hover {
+            color: #aaa;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .carousel-item {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+        .carousel-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .carousel-button {
+            background-color: #555;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .carousel-button:hover {
+            background-color: #888;
+        }
+        .game-info {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+        .game-info img {
+            max-width: 50%;
+            border-radius: 8px;
+        }
+        .game-info-text {
+            max-width: 50%;
+            padding-left: 20px;
+        }
+        .game-info-text h2 {
+            color: #e31b23;
+        }
+        .consoles{
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="playstation-logo.png" alt="PlayStation Logo">
+        </div>
+        <div class="hero">
+            <div class="content">
+                <h1>CBTIS Smash Bros</h1>
+                <p>Nintendo Entertainment Planning & Development</p>
+                <div class="consoles">
+                <p>Disponible para <span class="consoles" style="background-color: #d21d1d; padding: 5px 10px; border-radius: 5px;">Nintendo Switch</span>  <span class="consoles" style="background-color: #02ad21; padding: 5px 10px; border-radius: 5px;">Xbox Series S/X</span>  <span class="consoles" style="background-color: #0a51b6; padding: 5px 10px; border-radius: 5px;">PlayStation 5</span></p>
+                </div>
+                <div class="price-box">
+                    <p class="price">US$29.99 <span class="old-price">US$59.99</span></p>
+                    <p>Ahorra un 29%</p>
+                    <p>La oferta finaliza el 24/06/2024 23:59 GMT-6</p>
+                </div>
+                <div class="price-box">
+                    <p>Prueba del juego</p>
+                    <p><span class="trial-option" onclick="toggleTrialDetails()">Suscríbete a Nintendo Switch Online para jugar el Juego Completo (Disponible hasta agotar cierto numero de Descargas / SOLO Nintendo Swicth).</p>
+                </div>
+                <button class="button" onclick="addToCart()">Agregar al carrito</button>
+                <p>Disponible 26/10/2024</p>
+                <p>4 jugadores<br><br>Versión para Nintendo Switch<br>Compatible con la función de vibración HD y Giroscopio (Joycons)</p>
+                <p><br>Versión para Xbox Series X/S / PlayStation 5<br>Mejora Grafica a Resolucion 2160p(4K) a 60fps / Modo Rendimiento a 1440p(2K) a 120fps</p>
+            
+            </div>
+            <img src="img8.jpg" alt="Spider-Man Image">
+        </div>
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="assets/img/cbtisbroscap1.png" alt="Spider-Man Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/cbtisbroscap2.png" alt="Spider-Man Image 2">
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" onclick="prevSlide()">Anterior</button>
+            <button class="carousel-button" onclick="nextSlide()">Siguiente</button>
+        </div>
+        <div class="game-info">
+            <img src="img8.jpg" alt="Spider-Man Info Image">
+            <div class="game-info-text">
+                <h2>Información del juego</h2>
+                <h3>Lucha contra el Multiverso.</h3>
+                <p>En "CBTIS Smash Bros", los estudiantes del grupo A de programación del bachillerato
+                     CBTIS 47 se enfrentan en emocionantes batallas al estilo de Super Smash Bros. 
+                     ¡Prepárate para pelear con tus compañeros utilizando habilidades especiales inspiradas 
+                     en la programación mientras luchas por la supremacía en el salón de clases!</p>
+        </div>
+    </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${(i - index) * 100}%)`;
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function addToCart() {
+            alert("Juego agregado al carrito.");
+        }
+
+        function toggleTrialDetails() {
+            var details = document.getElementById('trial-details');
+            if (details.style.display === 'none') {
+                details.style.display = 'block';
+            } else {
+                details.style.display = 'none';
+            }
+        }
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
