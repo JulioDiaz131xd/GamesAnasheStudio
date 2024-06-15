@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.header img {
+    height: 40px;
+}
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px;
+}
+.hero img {
+    max-width: 50%;
+    border-radius: 8px;
+}
+.content {
+    max-width: 45%;
+}
+.content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+.content h2 {
+    margin-top: 0;
+    font-size: 2em;
+}
+.price-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.price-box p {
+    margin: 10px 0;
+}
+.price-box .price {
+    font-size: 2em;
+}
+.price-box .old-price {
+    text-decoration: line-through;
+    color: #888;
+}
+.button {
+    display: block;
+    width: 100%;
+    background-color: #281be3;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #0ddf57;
+}
+.trial-option {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: underline;
+}
+.trial-option:hover {
+    color: #aaa;
+}
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+.carousel-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.carousel-button {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.carousel-button:hover {
+    background-color: #888;
+}
+.game-info {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+.game-info img {
+    max-width: 50%;
+    border-radius: 8px;
+}
+.game-info-text {
+    max-width: 50%;
+    padding-left: 20px;
+}
+.game-info-text h2 {
+    color: #e31b23;
+}
