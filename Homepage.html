@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Bot - PlayStation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .auth-search {
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-search button {
+            background-color: #0070d1;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .auth-search input {
+            margin-left: 10px;
+            padding: 5px;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 200px 20px;
+            background-size: cover;
+            background-position: center;
+            height: 700px;
+            transition: background-image 1s ease-in-out;
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .hero a.button {
+            display: inline-block;
+            background-color: #0070d1;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero a.button:hover {
+            background-color: #005bb5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .image-buttons-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-button {
+            width: 150px;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: filter 0.3s;
+        }
+
+        .image-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-button:hover::before {
+            opacity: 1;
+        }
+
+        .ps5-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 100px;
+            background-color: #fff;
+        }
+
+        .ps5-section img {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .ps5-content {
+            max-width: 600px;
+        }
+
+        .ps5-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .ps5-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .ps5-content a {
+            display: inline-block;
+            background-color: #0070d1;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .game-carousel {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .game-carousel img {
+            max-width: 150px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Juegos</a></li>
+                <li><a href="#">PS5</a></li>
+                <li><a href="#">PS4</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Asistencia</a></li>
+            </ul>
+            <div class="auth-search">
+                <button>Iniciar sesión</button>
+                <input type="text" placeholder="Buscar">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" style="background-image: url('assets/img/logo1.jpg');">
+            <div class="content">
+                <h1>ASTRO BOT</h1>
+                <h2>¡ASTRO está de regreso!</h2>
+                <p>Adéntrate en una aventura nueva de gran tamaño con ASTRO en 50 mundos emocionantes y diversos.</p>
+                <a id="hero-button" href="link1.html" class="button">Más información</a>
+            </div>
+        </section>
+        <section class="image-buttons">
+            <div class="image-buttons-container">
+                <a href="link1.html" class="image-button" style="background-image: url('assets/img/logo1.jpg');"></a>
+                <a href="link2.html" class="image-button" style="background-image: url('assets/img/logo2.jpg');"></a>
+                <a href="link3.html" class="image-button" style="background-image: url('assets/img/logo3.jpg');"></a>
+            </div>
+        </section>
+        <section class="ps5-section">
+            <div class="ps5-content">
+                <h1>Presentamos la consola PS5 y sus accesorios</h1>
+                <p>Vive una nueva generación de juegos increíbles de PlayStation.</p>
+                <a href="#">Más información</a>
+            </div>
+            <img src="assets/img/ps5-console.jpg" alt="PS5 Console">
+        </section>
+        <section class="game-carousel">
+            <img src="assets/img/game1.jpg" alt="Game 1">
+            <img src="assets/img/game2.jpg" alt="Game 2">
+            <img src="assets/img/game3.jpg" alt="Game 3">
+            <img src="assets/img/game4.jpg" alt="Game 4">
+            <img src="assets/img/game5.jpg" alt="Game 5">
+            <img src="assets/img/game6.jpg" alt="Game 6">
+            <img src="assets/img/game7.jpg" alt="Game 7">
+            <img src="assets/img/game8.jpg" alt="Game 8">
+            <img src="assets/img/game9.jpg" alt="Game 9">
+            <img src="assets/img/game10.jpg" alt="Game 10">
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hero = document.querySelector('.hero');
+            const heroTitle = hero.querySelector('h1');
+            const heroSubtitle = hero.querySelector('h2');
+            const heroParagraph = hero.querySelector('p');
+            const heroButton = document.querySelector('#hero-button');
+
+            const contents = [
+                {
+                    image: 'assets/img/logo1.jpg',
+                    title: 'ASTRO BOT',
+                    subtitle: '¡ASTRO está de regreso!',
+                    paragraph: 'Adéntrate en una aventura nueva de gran tamaño con ASTRO en 50 mundos emocionantes y diversos.',
+                    buttonText: 'Más información',
+                    buttonLink: 'link1.html'
+                },
+                {
+                    image: 'assets/img/logo2.jpg',
+                    title: 'ASTRO BOT 2',
+                    subtitle: '¡Nuevas aventuras!',
+                    paragraph: 'Descubre nuevos mundos y desafíos con ASTRO en su segunda entrega.',
+                    buttonText: 'Descubre más',
+                    buttonLink: 'link2.html'
+                },
+                {
+                    image: 'assets/img/logo3.jpg',
+                    title: 'ASTRO BOT 3',
+                    subtitle: '¡La saga continúa!',
+                    paragraph: 'Prepárate para la última aventura de ASTRO con nuevas sorpresas y diversión garantizada.',
+                    buttonText: 'Ver detalles',
+                    buttonLink: 'link3.html'
+                }
+            ];
+
+            let currentIndex = 0;
+
+            function changeHeroContent() {
+                const { image, title, subtitle, paragraph, buttonText, buttonLink } = contents[currentIndex];
+                currentIndex = (currentIndex + 1) % contents.length;
+                hero.style.backgroundImage = `url(${image})`;
+                heroTitle.textContent = title;
+                heroSubtitle.textContent = subtitle;
+                heroParagraph.textContent = paragraph;
+                heroButton.textContent = buttonText;
+                heroButton.href = buttonLink;
+            }
+
+            setInterval(changeHeroContent, 3000);
+        });
+    </script>
+</body>
+</html>
