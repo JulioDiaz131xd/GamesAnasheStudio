@@ -1,0 +1,240 @@
+!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tezzoco - PlayStation/Xbox</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .header img {
+            height: 40px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #111;
+            width: 100%;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .hero img {
+            max-width: 50%;
+            border-radius: 8px;
+        }
+
+        .content {
+            max-width: 45%;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+
+        .price-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .price-box p {
+            margin: 10px 0;
+        }
+
+        .price-box .price {
+            font-size: 2em;
+        }
+
+        .price-box .old-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            background-color: #1e4fff;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0fbb43;
+        }
+
+        .trial-option {
+            cursor: pointer;
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .trial-option:hover {
+            color: #aaa;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .carousel img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .carousel-button {
+            background-color: #555;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .carousel-button:hover {
+            background-color: #888;
+        }
+
+        .game-info {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .game-info img {
+            max-width: 50%;
+            border-radius: 8px;
+        }
+
+        .game-info-text {
+            max-width: 50%;
+            padding-left: 20px;
+        }
+
+        .game-info-text h2 {
+            color: #1be393;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="playstation-logo.png" alt="PlayStation Logo">
+        </div>
+        <div class="hero">
+            <div class="content">
+                <h1>Take care of Dawny</h1>
+                <p>Games Anashe Studios</p>
+                <p>Disponible para <span
+                        style="background-color: #0a51b6; padding: 5px 10px; border-radius: 5px;">PS4-PS5</span>
+                    <span style="background-color: #02ad21; padding: 5px 10px; border-radius: 5px;">Xbox One-Xbox Series
+                        S/X</span>
+                </p>
+                <div class="price-box">
+                    <p class="price">US$29.99 <span class="old-price">US$59.99</span></p>
+                    <p>Ahorra un 29%</p>
+                    <p>La oferta finaliza el 30/06/2024 23:59 GMT-6</p>
+                </div>
+                <div class="price-box">
+                    <p>Prueba del juego</p>
+                    <p><span class="trial-option" onclick="toggleTrialDetails()">Suscríbete a Anashe Pass para jugar o
+                            desde Geforce Anashe Pass</span></p>
+                    <p id="trial-details" style="display: none;">Incluye acceso completo a Geforce Anashe Cloud.</p>
+                </div>
+                <button class="button" onclick="addToCart()">Agregar al carrito</button>
+                <p>Disponible 20/10/2023</p>
+                <p>1 jugador<br>Versión para PS4-PS5<br>Compatible con la función de vibración y el efecto de gatillo
+                    (control inalámbrico DualSense)</p>
+                <p>1 jugador<br>Versión para Xbox One-Xbox Series S<br>Compatible con funcion de movimiento al mover al
+                    personaje (Kinect Xbox One)</p>
+            </div>
+            <img src="assets/img/Tezococap1.jpg" alt="Img-Game">
+        </div>
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="assets/img/Tezococap4.jpg" alt="Img-Game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/Tezococap2.jpg" alt="Img-Game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/Tezococap3.jpg" alt="Img-Game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/Tezococap5.jpg" alt="Img-Game">
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-button" onclick="prevSlide()">Anterior</button>
+            <button class="carousel-button" onclick="nextSlide()">Siguiente</button>
+        </div>
+        <div class="game-info">
+            <img src="assets/img/Tezococap1.jpg" alt="Img-Game Info Image">
+            <div class="game-info-text">
+                <h2>Información del juego</h2>
+                <h3>Descubre sus Secretos del mundo de Tezzoco.</h3>
+                <p>"Tezzoco Love" es un encantador juego de aventuras románticas en el que tu misión principal es
+                    conquistar el corazón de Anna. En el papel del protagonista, Tezzoco, debes emprender una serie de
+                    misiones que se desarrollan en forma de citas únicas y memorables. Cada cita representa un desafío
+                    que requiere que uses tu ingenio y habilidades para impresionar a Anna, desde resolver acertijos
+                    románticos en un paseo por el parque hasta planear la cena perfecta a la luz de las velas. Con una
+                    narrativa envolvente, gráficos encantadores y una variedad de actividades y escenarios románticos,
+                    "Tezzoco Love" promete una experiencia inmersiva llena de emociones y momentos inolvidables.
+                </p>
+                <p>Haz citas con Anna para subir de nivel</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
