@@ -7,18 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const contents = [
         {
-            image: 'assets/img/logo1.jpg',
-            title: 'ASTRO BOT',
-            subtitle: '¡ASTRO está de regreso!',
-            paragraph: 'Adéntrate en una aventura nueva de gran tamaño con ASTRO en 50 mundos emocionantes y diversos.',
+            image: 'assets/img/vr.png',
+            title: 'Juegos compatible con realidad VR',
+            subtitle: 'Experiencia imersiva',
+            paragraph: 'Adéntrate en una nueva aventura ahora con titulos compatibles con VR y GeforceAnashe Cloud',
             buttonText: 'Más información',
             buttonLink: 'link1.html'
         },
         {
-            image: 'assets/img/logo2.jpg',
-            title: 'ASTRO BOT 2',
-            subtitle: '¡Nuevas aventuras!',
-            paragraph: 'Descubre nuevos mundos y desafíos con ASTRO en su segunda entrega.',
+            image: 'assets/img/ps5gif.gif',
+            title: 'Ahora Compatible con PS5',
+            subtitle: 'Adentrate con las nuevas tecnologias ',
+            paragraph: 'Ahora compatibles con PS5',
             buttonText: 'Descubre más',
             buttonLink: 'link2.html'
         },
@@ -45,5 +45,5 @@ document.addEventListener('DOMContentLoaded', () => {
         heroButton.href = buttonLink;
     }
 
-    setInterval(changeHeroContent, 3000);
+    setInterval(changeHeroContent, 7000);
 });
