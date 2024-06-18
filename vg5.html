@@ -1,11 +1,58 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawny - PlayStation/Xbox</title>
     <link rel="stylesheet" href="assets/css/img/styles.css">
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            font-size: 18px;
+        }
+        .carousel-button.prev {
+            left: 10px;
+        }
+        .carousel-button.next {
+            right: 10px;
+        }
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -49,16 +96,15 @@
                     <img src="assets/img/Dawnycap2.jpg" alt="Img-Game">
                 </div>
             </div>
+            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
         </div>
-        <div class="carousel-buttons">
-            <button class="carousel-button" onclick="prevSlide()">Anterior</button>
-            <button class="carousel-button" onclick="nextSlide()">Siguiente</button>
         </div>
         <div class="game-info">
             <img src="assets/img/Dawnycap1.jpg" alt="Img-Game Info Image">
             <div class="game-info-text">
                 <h2>Información del juego</h2>
-                <h3>Descubre sus Secretos del mundo de Josa Kong.</h3>
+                <h3>Descubre la vida de Dawny</h3>
                 <p>"Take Care of Dawny" es un encantador juego de rol que se desarrolla en el acogedor entorno de una casa familiar. En este juego, asumes el papel de un cuidador responsable de Dawny, un adorable bebé de 4 años. Tu objetivo es asegurarte de que Dawny esté feliz y saludable, gestionando diversas tareas diarias como alimentarlo, jugar con él, mantener la casa segura y brindarle atención médica cuando sea necesario. Cada decisión afecta el bienestar de Dawny y tu capacidad para manejar las demandas diarias. Con gráficos tiernos, una jugabilidad intuitiva y desafíos realistas, "Take Care of Dawny" ofrece una experiencia entrañable y educativa sobre la importancia del cuidado infantil.</p>
                 <p>Haz Amigos en un mundo de Dawny y Completa las misiones para Evolucionar de nivel</p>
             </div>
@@ -71,8 +117,7 @@
 
         function showSlide(index) {
             const slideWidth = slides[0].clientWidth;
-            const newTransform = -index * slideWidth;
-            track.style.transform = `translateX(${newTransform}px)`;
+            track.style.transform = `translateX(${-index * slideWidth}px)`;
         }
 
         function nextSlide() {
@@ -90,7 +135,7 @@
         }
 
         function toggleTrialDetails() {
-            const details = document.getElementById('trial-details');
+            var details = document.getElementById('trial-details');
             if (details.style.display === 'none') {
                 details.style.display = 'block';
             } else {
@@ -100,7 +145,6 @@
 
         window.addEventListener('resize', () => showSlide(currentSlide));
         showSlide(currentSlide);
-    </script>   
+    </script>  
 </body>
-
 </html>
