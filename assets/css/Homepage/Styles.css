@@ -36,12 +36,18 @@ nav ul li a {
     align-items: center;
 }
 
-.auth-search button {
+.auth-search a.button {
     background-color: #0070d1;
     color: #fff;
     border: none;
     padding: 5px 10px;
+    text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-search a.button:hover {
+    background-color: #005bb5;
 }
 
 .auth-search input {
@@ -63,6 +69,12 @@ nav ul li a {
 .hero .content {
     position: relative;
     z-index: 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .hero h1 {
@@ -174,6 +186,11 @@ nav ul li a {
     padding: 10px 20px;
     text-decoration: none;
     font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.ps5-content a:hover {
+    background-color: #005bb5;
 }
 
 .game-carousel {
@@ -187,4 +204,9 @@ nav ul li a {
     max-width: 150px;
     margin-right: 10px;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.game-carousel img:hover {
+    transform: scale(1.1);
 }

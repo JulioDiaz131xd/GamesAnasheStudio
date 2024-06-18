@@ -7,24 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const contents = [
         {
-            image: 'assets/img/vr.png',
-            title: 'Juegos compatible con realidad VR',
+            image: 'https://images.nintendolife.com/e82ba6a08b16e/nintendo-switch.original.jpg',
+            title: 'Juegos compatible con Joycon',
             subtitle: 'Experiencia imersiva',
-            paragraph: 'Adéntrate en una nueva aventura ahora con titulos compatibles con VR y GeforceAnashe Cloud',
+            paragraph: 'Adéntrate en una nueva aventura ahora con titulos compatibles Joycon!',
             buttonText: 'Más información',
             buttonLink: 'link1.html'
         },
         {
-            image: 'assets/img/ps5gif.gif',
+            image: 'https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/05/PS5.jpg',
             title: 'Ahora Compatible con PS5',
-            subtitle: 'Adentrate con las nuevas tecnologias ',
-            paragraph: 'Ahora compatibles con PS5',
+            subtitle: 'Adentrate con las nuevos titulos con trazado de rayos',
+            paragraph: 'Ahora con mas potencia!',
             buttonText: 'Descubre más',
             buttonLink: 'link2.html'
         },
         {
-            image: 'assets/img/logo3.jpg',
-            title: 'ASTRO BOT 3',
+            image: 'https://i0.wp.com/xxboxnews.blob.core.windows.net/prod/sites/4/Consoles-eb36182249206cefa827-7bce25d8508235e4e317.jpg?fit=1920%2C1080&ssl=1',
+            title: 'Ahora Compatible con Todas las Series De XBOX',
             subtitle: '¡La saga continúa!',
             paragraph: 'Prepárate para la última aventura de ASTRO con nuevas sorpresas y diversión garantizada.',
             buttonText: 'Ver detalles',
@@ -36,14 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function changeHeroContent() {
         const { image, title, subtitle, paragraph, buttonText, buttonLink } = contents[currentIndex];
-        currentIndex = (currentIndex + 1) % contents.length;
         hero.style.backgroundImage = `url(${image})`;
         heroTitle.textContent = title;
         heroSubtitle.textContent = subtitle;
         heroParagraph.textContent = paragraph;
         heroButton.textContent = buttonText;
         heroButton.href = buttonLink;
+        currentIndex = (currentIndex + 1) % contents.length;
     }
 
-    setInterval(changeHeroContent, 7000);
+    setInterval(changeHeroContent, 5000);
 });
