@@ -5,7 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class with Rivera - Games Anashe</title>
     <link rel="stylesheet" href="assets/css/img/styles.css">
-    <link rel="stylesheet" href="assets/js/scripts.js/scripts.js">
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            font-size: 18px;
+        }
+        .carousel-button.prev {
+            left: 10px;
+        }
+        .carousel-button.next {
+            right: 10px;
+        }
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -37,22 +84,20 @@
         <div class="carousel">
             <div class="carousel-track">
                 <div class="carousel-item">
-                    <img src="assets/img/riveracap1.png" alt="Img-Game">
+                    <img src="assets/img/riveracap1.png" alt="Img-Game 1">
                 </div>
                 <div class="carousel-item">
                     <img src="assets/img/riveracap2.png" alt="Img-Game 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/img/riveracap3.png" alt="Img-Game 3">
+                    <img src="assets/img/riveracap1.png" alt="Img-Game 3">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/img/riveracap4.png" alt="Img-Game 4">
+                    <img src="assets/img/riveracap2.png" alt="Img-Game 4">
                 </div>
             </div>
-        </div>
-        <div class="carousel-buttons">
-            <button class="carousel-button" onclick="prevSlide()">Anterior</button>
-            <button class="carousel-button" onclick="nextSlide()">Siguiente</button>
+            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
         </div>
         <div class="game-info">
             <img src="assets/img/Riveracap5.jpg" alt="Img-Game Info Image">
@@ -71,8 +116,7 @@
 
         function showSlide(index) {
             const slideWidth = slides[0].clientWidth;
-            const newTransform = -index * slideWidth;
-            track.style.transform = `translateX(${newTransform}px)`;
+            track.style.transform = `translateX(${-index * slideWidth}px)`;
         }
 
         function nextSlide() {
@@ -90,7 +134,7 @@
         }
 
         function toggleTrialDetails() {
-            const details = document.getElementById('trial-details');
+            var details = document.getElementById('trial-details');
             if (details.style.display === 'none') {
                 details.style.display = 'block';
             } else {
