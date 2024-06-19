@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +14,23 @@
             max-width: 800px;
             margin: auto;
         }
+
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
+
         .carousel-item {
             min-width: 100%;
             box-sizing: border-box;
         }
+
         .carousel-item img {
             width: 100%;
             height: auto;
             display: block;
         }
+
         .carousel-button {
             position: absolute;
             top: 50%;
@@ -38,15 +43,19 @@
             z-index: 1;
             font-size: 18px;
         }
+
         .carousel-button.prev {
             left: 10px;
         }
+
         .carousel-button.next {
             right: 10px;
         }
+
         .carousel-button:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
         .section-title {
             text-align: center;
             font-size: 24px;
@@ -54,6 +63,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -64,7 +74,11 @@
                 <h1>Josa Kong</h1>
                 <p>Games Anashe Studios</p>
                 <div class="consoles">
-                    <p>Disponible para <span class="consoles" style="background-color: #0a51b6; padding: 5px 10px; border-radius: 5px;">PS4-PS5</span> <span class="consoles" style="background-color: #02ad21; padding: 5px 10px; border-radius: 5px;">Xbox One-Xbox Series S/X</span></p>
+                    <p>Disponible para <span class="consoles"
+                            style="background-color: #0a51b6; padding: 5px 10px; border-radius: 5px;">PS4-PS5</span>
+                        <span class="consoles"
+                            style="background-color: #02ad21; padding: 5px 10px; border-radius: 5px;">Xbox One-Xbox
+                            Series S/X</span></p>
                 </div>
                 <div class="price-box">
                     <p class="price">US$39.99 <span class="old-price">US$59.99</span></p>
@@ -73,13 +87,16 @@
                 </div>
                 <div class="price-box">
                     <p>Prueba del juego</p>
-                    <p><span class="trial-option" onclick="toggleTrialDetails()">Suscríbete a Anashe Pass para jugar o desde Geforce Anashe Pass</span></p>
+                    <p><span class="trial-option" onclick="toggleTrialDetails()">Suscríbete a Anashe Pass para jugar o
+                            desde Geforce Anashe Pass</span></p>
                     <p id="trial-details" style="display: none;">Incluye acceso completo a Geforce Anashe Cloud.</p>
                 </div>
                 <button class="button" onclick="addToCart()">Agregar al carrito</button>
                 <p>Disponible 20/10/2023</p>
-                <p>1 jugador<br><br>Versión para PS4-PS5<br>Compatible con la función de vibración y el efecto de gatillo (control inalámbrico DualSense)</p>
-                <p><br>1 jugador<br><br>Versión para Xbox One-Xbox Series S<br>Compatible con funcion de movimiento al mover al personaje (Kinect Xbox One)</p>
+                <p>1 jugador<br><br>Versión para PS4-PS5<br>Compatible con la función de vibración y el efecto de
+                    gatillo (control inalámbrico DualSense)</p>
+                <p><br>1 jugador<br><br>Versión para Xbox One-Xbox Series S<br>Compatible con funcion de movimiento al
+                    mover al personaje (Kinect Xbox One)</p>
             </div>
             <img src="assets/img/JosaKongcap1.jpg" alt="Img-Game">
         </div>
@@ -109,8 +126,14 @@
             <div class="game-info-text">
                 <h2>Información del juego</h2>
                 <h3>Descubre sus Secretos del mundo de Josa Kong.</h3>
-                <p>"Josa Kong" es un emocionante juego de mundo abierto que te sumerge en una jungla vibrante y llena de vida. El protagonista es un astuto y valiente mono llamado Josa, que debe explorar vastos paisajes, desde densas selvas tropicales hasta majestuosas montañas. En su aventura, Josa enfrenta desafíos diversos, resuelve acertijos y lucha contra enemigos para proteger su hogar y descubrir antiguos secretos ocultos en la naturaleza. Con una jugabilidad dinámica, gráficos impresionantes y una historia cautivadora, "Josa Kong" promete horas de entretenimiento y exploración sin límites.</p>
-                <p>Haz Amigos en un mundo abierto ambientado en jungla moviendote con el Joystick, para lograr descubrir sus secretos mas oscuros</p>
+                <p>"Josa Kong" es un emocionante juego de mundo abierto que te sumerge en una jungla vibrante y llena de
+                    vida. El protagonista es un astuto y valiente mono llamado Josa, que debe explorar vastos paisajes,
+                    desde densas selvas tropicales hasta majestuosas montañas. En su aventura, Josa enfrenta desafíos
+                    diversos, resuelve acertijos y lucha contra enemigos para proteger su hogar y descubrir antiguos
+                    secretos ocultos en la naturaleza. Con una jugabilidad dinámica, gráficos impresionantes y una
+                    historia cautivadora, "Josa Kong" promete horas de entretenimiento y exploración sin límites.</p>
+                <p>Haz Amigos en un mundo abierto ambientado en jungla moviendote con el Joystick, para lograr descubrir
+                    sus secretos mas oscuros</p>
             </div>
         </div>
     </div>
@@ -151,4 +174,5 @@
         showSlide(currentSlide);
     </script>
 </body>
+
 </html>

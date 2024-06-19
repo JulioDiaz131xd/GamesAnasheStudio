@@ -2,9 +2,9 @@
 session_start();
 
 $servername = "localhost"; 
-$username = "tu_usuario"; 
-$password = "tu_contraseña"; 
-$dbname = "nombre_de_tu_base_de_datos"; 
+$username = "root"; 
+$password = "*******"; 
+$dbname = "Users"; 
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -26,10 +26,10 @@ if ($result->num_rows > 0) {
     // Inicio de sesión exitoso
     $_SESSION['loggedin'] = true;
     $_SESSION['username'] = $username;
-    header("Location: pagina_principal.php"); // Redirigir a la página principal
+    header("Location: pagina_principal.php"); 
 } else {
     // Inicio de sesión fallido
-    header("Location: index.php?error=1"); // Redirigir de nuevo al formulario de inicio de sesión con mensaje de error
+    header("Location: index.php?error=1"); /
 }
 
 $conn->close();

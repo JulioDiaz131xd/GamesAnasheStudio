@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos - Games Anashe Studio</title>
+    <link rel="stylesheet" href="assets/css/carrito/Styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pagos - Games Anashe Studio</h1>
+    </header>
+    <main>
+        <table id="juegosTable">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Plataforma</th>
+                    <th>Precio (MXN)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se insertarán los datos dinámicamente -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"><strong>Total a Pagar</strong></td>
+                    <td id="totalPagar"><strong>0 MXN</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="button-container">
+            <button onclick="redirectToConfirmationPage()">Confirmar Pago</button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Obtenemos la referencia a la tabla y la fila del cuerpo de la tabla
+            const tableBody = document.querySelector('#juegosTable tbody');
+            const tfootTotal = document.querySelector('#totalPagar');
+
+            // Precios de los juegos (hardcodeados)
+            const precios = [500, 600, 400, 450];
+
+            // Creamos las filas de la tabla de pagos
+            precios.forEach((precio, index) => {
+                const titulo = [
+                    'CBTIS: Smash Bros',
+                    'Class With Rivera',
+                    'Joza: Kong',
+                    'Tezzoco Love'
+                ][index];
+                const plataforma = [
+                    'Nintendo Switch',
+                    'PlayStation 4',
+                    'PlayStation 4, Xbox One',
+                    'Nintendo Switch'
+                ][index];
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${titulo}</td>
+                    <td>${plataforma}</td>
+                    <td>${precio} MXN</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Calcular y mostrar el total a pagar
+            const total = precios.reduce((acc, curr) => acc + curr, 0);
+            tfootTotal.innerHTML = `<strong>${total} MXN</strong>`;
+        });
+
+        function redirectToConfirmationPage() {
+            // Aquí podrías redirigir a una página de confirmación hardcodeada
+            // Por ejemplo, redireccionar a una página llamada confirmacion.html
+            location.href = 'confirmacion.html';
+        }
+    </script>
+</body>
+</html>
